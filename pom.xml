@@ -27,8 +27,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-
 	</dependencies>
 
 
@@ -36,14 +34,9 @@
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
-				<artifactId/>
-				<configuration>
-					<source>17</source> <!-- Change this to a supported Java version -->
-					<target>17</target> <!-- Change this to a supported Java version -->
-				</configuration>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

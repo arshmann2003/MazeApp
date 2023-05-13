@@ -73,15 +73,14 @@
             background-color: black;
             color: white;
             font-size: 30px;
-            margin-left: 24%;
         }
-        body::-webkit-scrollbar {
-          display: none;
-        }
-        body {
-          -ms-overflow-style: none; /* IE and Edge */
-          scrollbar-width: none; /* Firefox */
-        }
+<!--        body::-webkit-scrollbar {-->
+<!--          display: none;-->
+<!--        }-->
+<!--        body {-->
+<!--          -ms-overflow-style: none; /* IE and Edge */-->
+<!--          scrollbar-width: none; /* Firefox */-->
+<!--        }-->
         button[type="button"] {
           display: inline-block;
           position: relative;
@@ -121,6 +120,10 @@
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
+        #board{
+<!--            padding: calc((50% - 200px) / 2);-->
+        }
+
     </style>
 
 </head>
@@ -150,14 +153,14 @@
 
         <!-- Game state -->
         <p v-if="game != null">
-            You have found {{game.numCheeseFound}} of {{game.numCheeseGoal}}!</p>
+            You have found {{game.numCheeseFound}} of {{game.numCheeseGoal}}! (use arrows for movement)</p>
         <p v-else>
             No game information available; try creating a new game?
         </p>
 
 
         <!-- Board -->
-        <div v-if="board != null">
+        <div v-if="board != null" id="board">
             <table>
                 <tr v-for="(row, rowIdx) in board.hasWalls">
                     <td v-for="(isWall, colIdx) in row">

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MazeGame {
-	private static final int MAZE_SIZE_WIDTH  = 20;
+	private static final int MAZE_SIZE_WIDTH  = 25;
 	private static final int MAZE_SIZE_HEIGHT = 15;
 	private static final int DEFAULT_NUM_CHEESE_TO_COLLECT = 5;
 

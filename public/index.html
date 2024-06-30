@@ -4,7 +4,7 @@
     <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
     <style>
         tr, td, table{
-            border: "0";
+            border: 0px;
             padding: 0px;
             margin: 0px;
             border-spacing: 0px;
@@ -37,28 +37,6 @@
             margin-right: 210px;
         }
 
-        /*
-            Course List
-        */
-        ul#courses {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        #courses li {
-            float: left;
-            width: 80;
-        }
-        #courses li a {
-            display: block;
-            padding: 3px;
-            text-decoration: none;
-        }
-        #courses li a:hover {
-            background-color: yellow;
-        }
-
         tr.header {
             font-weight: bold;
         }
@@ -69,18 +47,21 @@
             background-color: yellow;
         }
 
+        #board{
+            display: flex;
+            justify-content: center;
+        }
+
+        #gameApp p{
+            text-align: center;
+        }
+
         body{
             background-color: black;
             color: white;
             font-size: 30px;
         }
-<!--        body::-webkit-scrollbar {-->
-<!--          display: none;-->
-<!--        }-->
-<!--        body {-->
-<!--          -ms-overflow-style: none; /* IE and Edge */-->
-<!--          scrollbar-width: none; /* Firefox */-->
-<!--        }-->
+
         button[type="button"] {
           display: inline-block;
           position: relative;
@@ -120,8 +101,8 @@
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
-        #board{
-<!--            padding: calc((50% - 200px) / 2);-->
+        .endMsg{
+            text-align: center;
         }
 
     </style>
@@ -158,6 +139,9 @@
             No game information available; try creating a new game?
         </p>
 
+        <!-- Won / loss -->
+        <h1 v-if="game!=null && game.isGameWon " class="endMsg">YOU WON! Congratulations!</h1>
+        <h1 v-if="game!=null && game.isGameLost" class="endMsg">YOU LOST! Try again?</h1>
 
         <!-- Board -->
         <div v-if="board != null" id="board">
@@ -187,10 +171,6 @@
                     </td>
                 </tr>
             </table>
-
-            <!-- Won / loss -->
-            <h1 v-if="game.isGameWon">YOU WON! Congratulations!</h1>
-            <h1 v-if="game.isGameLost">YOU LOST! Try again?</h1>
 
             <!-- Buttons for testing -->
 <!--            <h2>Testing API Error Handling</h2>-->
